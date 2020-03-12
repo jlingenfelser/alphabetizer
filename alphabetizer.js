@@ -3,7 +3,7 @@ input @string inputStr: string to sort
 input @int tickRate:
 output @string: returns bubble-sorted string
 */
-function bubbleSort(inputStr, tickRate) {
+function bubbleSort(inputStr) {
     var splitStr = inputStr.replace(/[^A-Za-z]+/g, '').split("");
     var length = splitStr.length;
     var correct = 0;
