@@ -76,7 +76,7 @@ function ret(str){
     var t0 = performance.now();
     $('#result_bubble').html(bubbleSort(str)); 
     var t1 = performance.now();
-    $('#time_bubble').html("Call to do sort [bubble] took " + (t1 - t0) + " milliseconds." + "<br />" + "<br />" + "My Implementation");
+    $('#time_bubble').html("Call to do sort [bubble] took " + (t1 - t0) + " milliseconds." + "<br />" + "<br />" + "My Implementation.");
 
     var t0 = performance.now();
     $('#result_pivot').html(pivotSort(str));
