@@ -18,6 +18,10 @@
             padding: 40px 15px;
             text-align: center;
         }
+
+        .result {
+            overflow-x: scroll;
+        }
     </style>
 </head>
 
@@ -29,10 +33,20 @@
             <input type="text" id="str" name="name" required minlength="1" maxlength="1000" size="40">
             <button type="button" class="btn btn-primary" id="submit">Submit</button>
         </div>
-        <div class="main">
-            <h4 id="name" style="margin-top: 5px;"></h4>
-            <p id="result"></p>
-            <p id="time" style="margin-top: 30px; font-style: oblique;"></p>
+        <h4 id="name" style="margin-top: 5px; text-align: center;"></h4>
+        <div class="row main">
+            <div class="col-sm-4 result">
+                <p id="result_bubble"></p>
+                <p id="time_bubble" style="margin-top: 30px; font-style: oblique;"></p>
+            </div>
+            <div class="col-sm-4 result">
+                <p id="result_native"></p>
+                <p id="time_native" style="margin-top: 30px; font-style: oblique;"></p>
+            </div>
+            <div class="col-sm-4 result">
+                <p id="result_pivot"></p>
+                <p id="time_pivot" style="margin-top: 30px; font-style: oblique;"></p>
+            </div>
         </div>
     </div><!-- /.container -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

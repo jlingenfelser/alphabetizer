@@ -62,15 +62,49 @@ function arrayMove(arr, oldIndex, newIndex) {
 /*
 Cleans up submit button / enter key functionality
 input @string str: string value
+input @type str: what sort to perform
 output: n/a
 */
 function ret(str){
+    $('#name').html('Results: ');
+    
     var t0 = performance.now();
-    $('#name').html('Result: ');
-    $('#result').html(bubbleSort(str));
+    $('#result_native').html(nativeSort(str));
     var t1 = performance.now();
-    $('#time').html("Call to do sort took " + (t1 - t0) + " milliseconds.");
+    $('#time_native').html("Call to do sort [native (Merge Sort)] took " + (t1 - t0) + " milliseconds." + "<br />" + "<br />" + "Note: Javascript's native sort gives capitalized letters a different value than letters uncapitalized and so does not meet the produce requirements.");
+
+    var t0 = performance.now();
+    $('#result_bubble').html(bubbleSort(str)); 
+    var t1 = performance.now();
+    $('#time_bubble').html("Call to do sort [bubble] took " + (t1 - t0) + " milliseconds." + "<br />" + "<br />" + "My Implementation");
+
+    var t0 = performance.now();
+    $('#result_pivot').html(pivotSort(str));
+    var t1 = performance.now();
+    $('#time_pivot').html("Return input string took " + (t1 - t0) + " milliseconds.");
 }
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+/*
+JS built in sort function
+input @string inputStr: input string
+output @string: alphabetized string
+*/
+function nativeSort(inputStr){
+    return(inputStr.replace(/[^A-Za-z]+/g, '').split("").sort().join(""));
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+/*
+Pivot sort
+*/
+function pivotSort(inputStr){
+    return inputStr;
+}
+
 
 /*
 Listener events enabled once page loads
