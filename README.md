@@ -15,7 +15,7 @@ To run on your computer:
 
 
 TODO:
-[ ] Create simple mixed implementation of native and bubble sort and test speed increase. (loop through characters in input string and if no capital letters are used, used the native sort, otherwise use bubble). 
-[ ] Create pivot sort implementation then mixed pivot and native. 
-[ ] Write test case that will run each sort algo using strings of various lengths and characters / special / numbers/ capitals and find average time to completion. 
-[ ] Implement fastest sort as node command line script.
+- [ ] Create simple mixed implementation of native and bubble sort and test speed increase. (loop through characters in input string and if no capital letters are used, used the native sort, otherwise use bubble). 
+- [ ] Create pivot sort implementation then mixed pivot and native. 
+- [ ] Write test case that will run each sort algo using strings of various lengths and characters / special / numbers/ capitals and find average time to completion. 
+- [ ] Implement fastest sort as node command line script.
