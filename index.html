@@ -10,7 +10,6 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            padding-top: 50px;
             font-family: sans-serif;
         }
 
@@ -26,9 +25,9 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="main bg-light">
-            <h1>Alphabetizer:</h1>
+    <div class="container" style="max-width: 100%;">
+        <div class="main bg-light w-100" style="max-width: 100%">
+            <h1 style="padding-top: 10px">Alphabetizer:</h1>
             <p class="lead">Please submit a string for alphabetization.</p>
             <input type="text" id="str" name="name" required minlength="1" maxlength="1000" size="40">
             <button type="button" class="btn btn-primary" id="submit">Submit</button>
