@@ -4,7 +4,7 @@ input @int tickRate:
 output @string: returns bubble-sorted string
 */
 function bubbleSort(inputStr) {
-    var splitStr = inputStr.replace(/[^A-Za-z]+/g, '').split("");
+    var splitStr = inputStr.slice(2).join("").replace(/[^A-Za-z]+/g, '').split("");
     var length = splitStr.length;
     var correct = 0;
 
@@ -59,33 +59,4 @@ function arrayMove(arr, oldIndex, newIndex) {
     return arr;
 }
 
-/*
-Cleans up submit button / enter key functionality
-input @string str: string value
-output: n/a
-*/
-function ret(str){
-    var t0 = performance.now();
-    $('#name').html('Result: ');
-    $('#result').html(bubbleSort(str));
-    var t1 = performance.now();
-    $('#time').html("Call to do sort took " + (t1 - t0) + " milliseconds.");
-}
-
-/*
-Listener events enabled once page loads
-*/
-window.onload = function () {
-    $('#submit').click(function () {
-        str = $('#str').val();
-        ret(str);
-    });
-
-    $('#str').keypress(function (event) {
-        var keycode = (event.keyCode ? event.keyCode : event.which);
-        if (keycode == '13') {
-            str = $('#str').val();
-            ret(str);
-        }
-    });
-};
+console.log(bubbleSort(process.argv));
