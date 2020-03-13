@@ -1,6 +1,7 @@
 # alphabetizer.js
 Output string in alphabetical order with expression tools, simple user interface with index.html  
-**View in action at: (Recommend Chrome, firefox doesn't diplay performance.now() correctly)** https://jlingenfelser.github.io/alphabetizer/
+**(Recommend Chrome, firefox doesn't diplay performance.now() correctly)**
+**View in action at:** https://jlingenfelser.github.io/alphabetizer/
 
 # nodeAlphabetizer.js
 Node js command line tool version of string alphabetizer.
