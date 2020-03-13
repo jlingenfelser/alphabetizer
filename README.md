@@ -1,6 +1,6 @@
 # alphabetizer.js
 Output string in alphabetical order with expression tools, simple user interface with index.html  
-**(Recommend Chrome, firefox doesn't diplay performance.now() correctly)**
+**(Recommend Chrome, firefox doesn't diplay performance.now() correctly)**  
 **View in action at:** https://jlingenfelser.github.io/alphabetizer/
 
 # nodeAlphabetizer.js
