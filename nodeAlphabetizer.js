@@ -1,28 +1,4 @@
 /*
-input @string inputStr: string to sort
-input @int tickRate:
-output @string: returns bubble-sorted string
-*/
-function bubbleSort(inputStr) {
-    var splitStr = inputStr.slice(2).join("").replace(/[^A-Za-z]+/g, '').split("");
-    var length = splitStr.length;
-    var correct = 0;
-
-    while (correct < length) {
-        for (var i = 1; i < length; i++) {
-            var val = alphabetical(splitStr[i - 1], splitStr[i]);
-            if (val === 1) {
-                arrayMove(splitStr, i - 1, i);
-                correct = 0;
-            } else {
-                correct++;
-            }
-        }
-    }
-    return (splitStr.join(""));
-}
-
-/*
 input @char a: first char to compare
 input @char b: second char to compare
 output @int: returns if value is >, <, or == to its neighbor
@@ -43,20 +19,60 @@ function alphabetical(a, b) {
 }
 
 /*
-input @array arr: array
-input @int oldIndex: old position in array
-input @int newIndex: new position in array
-output @array arr: array with swapped positions
+JS built in sort function
+input @string inputStr: input string
+output @string: alphabetized string
 */
-function arrayMove(arr, oldIndex, newIndex) {
-    if (newIndex >= arr.length) {
-        var k = newIndex - arr.length + 1;
-        while (k--) {
-            arr.push(undefined);
-        }
-    }
-    arr.splice(newIndex, 0, arr.splice(oldIndex, 1)[0]);
-    return arr;
+function nativeSort(inputStr) {
+    return (inputStr.replace(/[^A-Za-z]+/g, '').split("").sort().join(""));
 }
 
-console.log(bubbleSort(process.argv));
+/*
+Pivot sort implementation using recursion
+input @array inputArr: array to sort
+output @string: string concatination of gradually more sorted array
+*/
+function pivotSort(inputArr) {
+    if (inputArr.length < 2) {
+        return inputArr.join("");
+    }
+
+    var pivot = inputArr[0]
+    var lesserArray = [];
+    var greaterArray = [];
+
+    //loop through entirety of array
+    for (var i = 1; i < inputArr.length; i++) {
+        //if the character we are on is of a value >= the pivot. push the char to an array of larger values
+        if (alphabetical(inputArr[i], pivot) === 1 || alphabetical(inputArr[i], pivot) === 0) {
+            greaterArray.push(inputArr[i]);
+        }
+        //other wise push it to an array of smaller values 
+        else {
+            lesserArray.push(inputArr[i]);
+        }
+    }
+    //Combines the lesser array + the 0th character + (each time the function runs the new greater array)
+    return pivotSort(lesserArray).concat(pivot, pivotSort(greaterArray));
+}
+
+
+/*
+Combination of JS built in sort function and pivot sort
+input @string inputStr: input string
+output @string: alphabetized string
+*/
+function combinedPivotSort(inputStr) {
+    var str = inputStr.slice(2).join("")
+    var regex = /^[a-z]+$/;
+    //Validate test value against the Regex.
+    var isValid = regex.test(str);
+    if (!isValid) {
+        var splitStr = str.replace(/[^A-Za-z]+/g, '').split("");
+        return (pivotSort(splitStr));
+    } else {
+        return (nativeSort(str));
+    }
+}
+
+console.log(combinedPivotSort(process.argv));
