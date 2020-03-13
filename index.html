@@ -29,7 +29,7 @@
         <div class="main bg-light w-100" style="max-width: 100%">
             <h1 style="padding-top: 10px">Alphabetizer:</h1>
             <p class="lead">Please submit a string for alphabetization.</p>
-            <input type="text" id="str" name="name" required minlength="1" maxlength="1000" size="40">
+            <input type="text" id="str" name="name" required minlength="1" size="40">
             <button type="button" class="btn btn-primary" id="submit">Submit</button>
         </div>
         <h4 id="name" style="margin-top: 5px; text-align: center;"></h4>
@@ -43,12 +43,38 @@
                 <p id="time_native" style="margin-top: 30px; font-style: oblique;"></p>
             </div>
             <div class="col-sm-4 result">
+                <p id="result_combined"></p>
+                <p id="time_combined" style="margin-top: 30px; font-style: oblique;"></p>
+            </div>
+        </div>
+        <div class="row main">
+            <div class="col-sm-8 result">
                 <p id="result_pivot"></p>
                 <p id="time_pivot" style="margin-top: 30px; font-style: oblique;"></p>
+            </div>
+            <div class="col-sm-4 result">
+                <p id="result_pivot_combined"></p>
+                <p id="time_pivot_combined" style="margin-top: 30px; font-style: oblique;"></p>
+            </div>
+        </div>
+        <div class="main bg-light w-100" style="max-width: 100%">
+            <h1 style="padding-top: 10px">Test Station:</h1>
+            <p class="lead">Please enter the number of strings you would like to test, and a length for those strings.</p>
+            <p>Each tested string contains a sequence of characters from this dataset - "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_] ["</p>
+            <p>Number of samples to test: <input type="number" id="num_samples" name="name" value="50"> Length of samples: <input type="number" id="length" name="name" value="600"></p>
+            <button type="button" class="btn btn-primary" id="submit_test">Submit</button>
+        </div>
+        <div class="row main">
+            <div class="col-sm-12">
+                <h4 id="test_name"></h4>
+                <p id="string_header"></p>
+                <p id="string_info"></p>
+                <h6 id="example_string" style="overflow-x: scroll;"></h6>
             </div>
         </div>
     </div><!-- /.container -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="alphabetizer.js"></script>
-    </body>
+</body>
+
 </html>
