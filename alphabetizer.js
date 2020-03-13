@@ -290,7 +290,7 @@ window.onload = function () {
         var numSample = $('#num_samples').val();
         var length = $('#length').val();
         var info = populateSorts(numSample, length);
-        $('#string_info').html("Native Sort: " + info[0] + "<br />" + "Bubble Sort: " + info[1] + "<br />" + "Combined Bubble Sort: " + info[2] + "<br />" + "Pivot Sort: " + info[3] + "<br />" + "Combined Pivot Sort: " + info[4] + "<br />");
+        $('#string_info').html("Native Sort: " + info[0] + " milliseconds." + "<br />" + "Bubble Sort: " + info[1] + " milliseconds." + "<br />" + "Combined Bubble Sort: " + info[2] + " milliseconds." + "<br />" + "Pivot Sort: " + info[3] + " milliseconds." + "<br />" + "Combined Pivot Sort: " + info[4] + " milliseconds." + "<br />");
         $('#example_string').html("Example string: " + info[5] + "<br />" + "Sorted:" + info[6]);
     });
 
